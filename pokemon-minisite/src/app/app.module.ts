@@ -5,20 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @NgModule({
     declarations:[
-        AppComponent, 
+        AppComponent,
+        HeaderComponent, 
         PokemonListComponent
     ],
     imports:[
         BrowserModule, 
         CommonModule, 
-        HttpClientModule
+        
     ],
-    providers:[],
+    providers:[HttpClientModule],
     bootstrap:[AppComponent]
 })
 export class AppModule {}

@@ -1,15 +1,13 @@
 <div class="card-grid">
-    <div class="card" *ngFor="let pokemon of pokemons" (click)="showPokemonDetail(pokemon)"> 
-        <div class="card__info">
-            <h2>{{ pokemon.name }}</h2>
-            <span>{{ pokemon.id }}</span>
-            <div class="card__img">
-                <img [src]="pokemon.image" alt="{{ pokemon.name }}">
-            </div>
-        </div>
-    </div>
-
-    
+    <div class="card" *ngFor="let pokemon of fpokemons"></div>
+    <button [class.selected]="pokemon === selectedPokemon" type="button" (click)="openPopup(pokemon)">
+        <div class="name">{{pokemon.name | uppercase }}</div>    
+            <div class="card__info">
+                <h2>{{ pokemon.name }}</h2>
+                <span>{{ pokemon.id }}</span>
+            <div class="card__img"><img [src]="pokemon.image" alt="{{ pokemon.name }}"></div>
+            </div> 
+        </button>
+    <app-pokemon-detail [pokemon]="selectedPokemon" (close)="closePopup()"></app-pokemon-detail>
 </div>
 
-    

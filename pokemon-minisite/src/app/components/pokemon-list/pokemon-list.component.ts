@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgFor } from '@angular/common';
 
 import { PokemonService } from '../../services/pokemon.service';
 import { PokemonInterface } from '../../interfaces/pokemon.interface';
+
 
 
 @Component({
@@ -14,8 +15,13 @@ import { PokemonInterface } from '../../interfaces/pokemon.interface';
 })
 export class PokemonListComponent implements OnInit{
   pokemons: PokemonInterface[] = [];
+  isSearching: boolean = false;
+  selectedPokemon?: PokemonInterface;
 
-  constructor(private pokemonService: PokemonService) {}
+
+  constructor(
+    private pokemonService: PokemonService,
+    ) {}
   
   
   ngOnInit()  {
@@ -25,10 +31,20 @@ export class PokemonListComponent implements OnInit{
       });
     }
 
-    showPokemonDetail(pokemon: PokemonInterface): void {
-      // Implement the logic to display more information about the chosen Pokemon
-      console.log('Clicked Pokemon:', pokemon);
-      // You can navigate to a detail page, display a modal, or any other desired action
+    // showPokemonDetail(pokemon: PokemonInterface): void {
+    //   this.selectedPokemon = pokemon;
+    //   console.log('Clicked Pokemon:', this.selectedPokemon);
+    // }
+
+    openPopup(pokemon: PokemonInterface): void {
+      this.selectedPokemon = pokemon;
+      
     }
+  
+    closePopup(): void {
+      this.selectedPokemon = undefined;
+    }
+
+    
   }
 

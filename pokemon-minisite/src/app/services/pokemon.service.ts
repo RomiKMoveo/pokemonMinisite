@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { PokemonInterface } from '../interfaces/pokemon.interface';
+import { PokemonDetailInterface } from '../interfaces/pokemon-detail.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +32,22 @@ export class PokemonService {
     const parts = url.split('/');
     return parseInt(parts[parts.length - 2], 10);
   }
+
+  getPokemonDetail(pokemonUrl: string): Observable<PokemonDetailInterface> {
+    return this.http.get<PokemonDetailInterface>(pokemonUrl);
+  }
+
+  getPokemonSearch(name: string): Observable<PokemonInterface> {
+    return this.http.get<any>(`${this.apiUrl}${name}`)
+    .pipe(
+      map((pokemons: any) => pokemons.results.map((pokemon: PokemonInterface) => ({
+        name: pokemon.name,
+        url: pokemon.url,
+        id: this.extractPokemonIdFromUrl(pokemon.url),
+        image: `${this.imageUrl}${this.extractPokemonIdFromUrl(pokemon.url)}.png`,
+        types: pokemon.types
+  })))); 
+  }
+  
+
 }

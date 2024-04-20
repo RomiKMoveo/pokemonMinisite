@@ -16,7 +16,7 @@ export interface RawStats {
 }
    
 
-export interface PokemonInterface {
+export interface PokemonDetailInterface {
     id: number;
     name: string;
     imageUrl: string;
