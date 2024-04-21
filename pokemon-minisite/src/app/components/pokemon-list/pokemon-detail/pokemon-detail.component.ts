@@ -27,19 +27,13 @@ export class PokemonDetailComponent implements OnInit {
   }
 
     
-    ngOnInit() {
-      this.getPokemonDetail();
+    ngOnInit(): void {
     }
 
-    getPokemonDetail(): void {
-      this.pokemonService.getPokemonDetails(this.selectedPokemon.url)
-    .subscribe((pokemon) => {
-        this.pokemonDetail = pokemon;
-        console.log('Pokemon Detail:', this.pokemonDetail);
-    });
-    }
-  
+
   }
+  
+ 
 
   
 
