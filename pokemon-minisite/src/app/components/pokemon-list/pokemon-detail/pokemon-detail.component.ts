@@ -1,7 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PokemonDetailInterface } from '../../../interfaces/pokemon-detail.interface';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 import { PokemonInterface } from '../../../interfaces/pokemon.interface';
-import { PokemonListComponent } from '../pokemon-list.component';
+import { PokemonService } from '../../../services/pokemon.service';
+import { Observable } from 'rxjs';
+import { PokemonDetailInterface } from '../../../interfaces/pokemon-detail.interface';
+
+
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -10,30 +15,34 @@ import { PokemonListComponent } from '../pokemon-list.component';
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss'
 })
-export class PokemonDetailComponent {
-  pokemon?: PokemonInterface;
-  @Output() close: EventEmitter<void> = new EventEmitter<void>();
-
-  constructor(private pokemonListComponent: PokemonListComponent) {
-    this.pokemon = pokemonListComponent.selectedPokemon;
+export class PokemonDetailComponent implements OnInit {  
+  pokemonToPresent?:PokemonInterface
+  pokemonDetail?: PokemonDetailInterface;
+  
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public selectedPokemon: PokemonInterface,
+    private pokemonService: PokemonService) 
+  {
+    this.pokemonToPresent = selectedPokemon; 
   }
 
-  closePopup(): void {
-    this.close.emit();
-  }
-
-  preventClose(event: MouseEvent): void {
-    event.stopPropagation();
-  }
-
-  getProperty(pokemon: PokemonDetailInterface, property: string): string {
-    switch (property) {
-      case 'Height':
-        return pokemon.height + ' cm';
-      case 'Weight':
-        return pokemon.weight + ' kg';
-      default:
-        return '';
+    
+    ngOnInit() {
+      this.getPokemonDetail();
     }
+
+    getPokemonDetail(): void {
+      this.pokemonService.getPokemonDetail(this.selectedPokemon.name)
+    .subscribe((pokemon: PokemonDetailInterface) => {
+        this.pokemonDetail = pokemon;
+        console.log('Pokemon Detail:', this.pokemonDetail);
+    });
+    }
+  
   }
-}
+
+  
+
+  
+
+

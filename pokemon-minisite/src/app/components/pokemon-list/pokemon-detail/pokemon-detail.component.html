@@ -1,17 +1,3 @@
-<div class="pokemon-popup-overlay" *ngIf="pokemon" (click)="closePopup()">
-  <div class="pokemon-popup" (click)="preventClose($event)">
-    <div class="pokemon-title"> {{pokemon.name  | uppercase }}</div>
-      <div class="card-body">
-        <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" class="pokemon-image">
-        <ng-container *ngFor="let property of ['Types', 'Abilities', 'Height', 'Weight']">
-          <div class="pokemon-info">
-            <div class="info-label">{{property}}:</div>
-            <div class="info-value" *ngIf="property === 'Types' || property === 'Abilities'">
-              {{pokemon[property.toLowerCase()].join(', ')}}
-            </div>
-            <div class="info-value">{{ getProperty(pokemon, property) }}</div>
-          </div>
-        </ng-container>
-      </div>
-    </div>
-</div>
+
+<h2>{{ selectedPokemon?.name }}</h2>
+<span>{{ selectedPokemon?.id }}</span>

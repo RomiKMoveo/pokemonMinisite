@@ -17,6 +17,7 @@ export interface RawStats {
    
 
 export interface PokemonDetailInterface {
+    url:string;
     id: number;
     name: string;
     imageUrl: string;

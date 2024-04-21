@@ -16,7 +16,7 @@ export class PokemonService {
 
   constructor( private http: HttpClient ) {}
 
-  getPokemonList() {
+  getPokemonList(): Observable<PokemonInterface[]>{
     return this.http.get<any>(this.apiUrlLimit)
     .pipe(
       map((pokemons: any) => pokemons.results.map((pokemon: PokemonInterface) => ({
@@ -33,10 +33,10 @@ export class PokemonService {
     return parseInt(parts[parts.length - 2], 10);
   }
 
-  getPokemonDetail(pokemonUrl: string): Observable<PokemonDetailInterface> {
-    return this.http.get<PokemonDetailInterface>(pokemonUrl);
+  getPokemonDetail(pokemonName: string): Observable<PokemonDetailInterface> {
+    return this.http.get<any>(`${this.apiUrl}${pokemonName}`);
   }
-
+  
   getPokemonSearch(name: string): Observable<PokemonInterface> {
     return this.http.get<any>(`${this.apiUrl}${name}`)
     .pipe(
