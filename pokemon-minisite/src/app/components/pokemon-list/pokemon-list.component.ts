@@ -5,14 +5,18 @@ import { PokemonService } from '../../services/pokemon.service';
 import { PokemonInterface } from '../../interfaces/pokemon.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { FilterPokemonPipe } from './filter-pokemon.pipe';
 
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
   imports: [
-    NgFor
+    NgFor,
+    FilterPokemonPipe,
+    FormsModule
   ],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss'
@@ -20,10 +24,14 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 export class PokemonListComponent implements OnInit{
   pokemons: PokemonInterface[] = [];
   selectedPokemon?: PokemonInterface;
+  
+  types: string[] = [];
+  selectedType: string = 'all';
+  searchInput: string = '';
 
   constructor(
     private pokemonService: PokemonService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
     ) {}
   
   
@@ -32,16 +40,36 @@ export class PokemonListComponent implements OnInit{
     .subscribe((pokemons: PokemonInterface[]) => {
       this.pokemons = pokemons;
       console.log(pokemons);
-      });
+      
+      this.getAllTypes();  
+    });
+      
+      console.log(this.types);
     }
 
     openPopup(pokemon: PokemonInterface): void {
-      console.log('Clicked Pokemon:', pokemon);
+      console.log('Clicked Pokemon:', pokemon.types);
       const dialogRef = this.dialog.open(PokemonDetailComponent, {
         data: pokemon
+
       });
     }
 
+    getAllTypes(): void {
+      this.pokemons.forEach(pokemon => {
+        pokemon.types.forEach(type => {
+          if (!this.types.includes(type)) {
+            this.types.push(type);
+          }
+        });
+      });
+      
+    }
+    
+    onSearchPokemon(searchTerm: string) {
+      this.searchInput = searchTerm;
+
+    }
     
   }
 

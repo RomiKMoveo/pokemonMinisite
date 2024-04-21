@@ -4,7 +4,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PokemonInterface } from '../../../interfaces/pokemon.interface';
 import { PokemonService } from '../../../services/pokemon.service';
 import { Observable } from 'rxjs';
-import { PokemonDetailInterface } from '../../../interfaces/pokemon-detail.interface';
+
 
 
 
@@ -17,7 +17,7 @@ import { PokemonDetailInterface } from '../../../interfaces/pokemon-detail.inter
 })
 export class PokemonDetailComponent implements OnInit {  
   pokemonToPresent?:PokemonInterface
-  pokemonDetail?: PokemonDetailInterface;
+  pokemonDetail?: PokemonInterface;
   
   constructor(
     @Inject(MAT_DIALOG_DATA) public selectedPokemon: PokemonInterface,
@@ -32,8 +32,8 @@ export class PokemonDetailComponent implements OnInit {
     }
 
     getPokemonDetail(): void {
-      this.pokemonService.getPokemonDetail(this.selectedPokemon.name)
-    .subscribe((pokemon: PokemonDetailInterface) => {
+      this.pokemonService.getPokemonDetails(this.selectedPokemon.url)
+    .subscribe((pokemon) => {
         this.pokemonDetail = pokemon;
         console.log('Pokemon Detail:', this.pokemonDetail);
     });
