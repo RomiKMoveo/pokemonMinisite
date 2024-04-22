@@ -8,7 +8,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FilterPokemonPipe } from './components/pokemon-list/filter-pokemon.pipe';
+import { FilterPokemonPipe } from './pipes/filter-pokemon.pipe';
 
 
 
