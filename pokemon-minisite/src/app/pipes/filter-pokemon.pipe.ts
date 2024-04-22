@@ -5,7 +5,7 @@ import { PokemonInterface } from '../interfaces/pokemon.interface';
   name: 'filterPokemon',
   standalone: true
 })
-export class FilterPokemonPipe implements PipeTransform {
+export class FilterPokemonByTypeAndNamePipe implements PipeTransform {
   transform(pokemons: PokemonInterface[], selectedType: string, searchInput: string): any[] {
     if (!pokemons) {
       return [];
