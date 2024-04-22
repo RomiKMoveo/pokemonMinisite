@@ -8,7 +8,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FilterPokemonPipe } from './pipes/filter-pokemon.pipe';
+import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
 
 
 
@@ -19,7 +19,7 @@ import { FilterPokemonPipe } from './pipes/filter-pokemon.pipe';
         AppComponent,
         HeaderComponent, 
         PokemonListComponent,
-        FilterPokemonPipe
+        FilterPokemonByTypeAndNamePipe
       
     ],
     imports:[

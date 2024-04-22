@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
@@ -12,10 +12,6 @@ import { HeaderComponent } from './components/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
-  title = 'pokemon-minisite';
-
-  ngOnInit(): void {
-    
-  }
+export class AppComponent {
+ 
 }
