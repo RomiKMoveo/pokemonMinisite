@@ -29,9 +29,9 @@ export class PokemonService {
           this.http.get<PokemonInterface>(pokemon.url).pipe(
             map((detail: PokemonInterface) => ({
               types: detail.types.map((type: any) => type.type.name),
-              height: detail.height, // Include height property
-              weight: detail.weight, // Include weight property
-              abilities: detail.abilities.map((ability: any) => ability.ability.name) // Include abilities property
+              height: detail.height, 
+              weight: detail.weight, 
+              abilities: detail.abilities.map((ability: any) => ability.ability.name) 
             }))
           )
         );
