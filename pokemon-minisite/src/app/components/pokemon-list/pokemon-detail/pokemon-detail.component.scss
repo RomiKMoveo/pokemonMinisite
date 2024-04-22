@@ -12,8 +12,7 @@
 
 
   .pokemon-title {
-    font-family: var(--main-font);
-    background-color: var(--red-color);
+    font-family: $main-font;
     border-radius: 10px;
     font-weight: bold;
     text-align: center;
