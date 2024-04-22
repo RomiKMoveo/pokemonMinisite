@@ -10,8 +10,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-detail',
-  standalone: true,
-  imports: [],
+  // standalone: true,
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss'
 })
