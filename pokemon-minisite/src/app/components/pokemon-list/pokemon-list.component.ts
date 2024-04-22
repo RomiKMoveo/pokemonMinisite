@@ -6,7 +6,7 @@ import { PokemonService } from '../../services/pokemon.service';
 import { PokemonInterface } from '../../interfaces/pokemon.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { FilterPokemonPipe } from './filter-pokemon.pipe';
+import { FilterPokemonPipe } from '../../pipes/filter-pokemon.pipe';
 
 
 
