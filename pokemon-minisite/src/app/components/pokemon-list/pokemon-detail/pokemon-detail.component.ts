@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { PokemonInterface } from '../../../interfaces/pokemon.interface';
@@ -10,11 +10,10 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-detail',
-  // standalone: true,
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss'
 })
-export class PokemonDetailComponent implements OnInit {  
+export class PokemonDetailComponent {  
   pokemonToPresent?:PokemonInterface
   pokemonDetail?: PokemonInterface;
   
@@ -24,12 +23,6 @@ export class PokemonDetailComponent implements OnInit {
   {
     this.pokemonToPresent = selectedPokemon; 
   }
-
-    
-    ngOnInit(): void {
-    }
-
-
   }
   
  
