@@ -1,12 +1,15 @@
-<div>
-    <select class="select-dropdown" [(ngModel)]="selectedType">
-        <option value="all">All Types</option>
-        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
-    </select>
+<div class="search">
+    <div>
+        <div ><input class="search__input" [(ngModel)]="searchInput" (keydown.enter)="onSearchPokemon(searchInput)" placeholder="Search for Pokémon" ></div>
+    </div>
+    <div>
+        <select class="sort__select" [(ngModel)]="selectedType">
+            <option value="all">All Types</option>
+            <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+        </select>
+    </div>
 </div>
-<div>
-    <div><input [(ngModel)]="searchInput" (keydown.enter)="onSearchPokemon(searchInput)" placeholder="Search for Pokémon"></div>
-</div>
+
 
 <div class="card-grid">
     <div *ngFor="let pokemon of pokemons| filterPokemon:selectedType:searchInput">

@@ -1,39 +1,46 @@
-@use '../../../style/variables' as *;
 
+@use '../../../style/variables' as *;
+@import '../pokemon-list.component.scss';
 
 .pokemon-popup {
-  background-color: var(--yellow-color);
-  border: none;
-  transition: background-color 0.3s ease;
-  width: 40%;
-  height: 40%;
-  border-radius: 10px;
-  box-shadow: var-(-box-shadow);
+  background-color: $fire-light;
+  box-shadow: 0 4px 8px rgba(0, 0, 0.1, 0.1); 
+  
 
 
   .pokemon-title {
     font-family: $main-font;
-    border-radius: 10px;
+    border-radius: 15px;
     font-weight: bold;
     text-align: center;
     font-size: 22px;
     padding: 15px;
-    color: var(--white-color);
+    color: $normal-light;
   }
 
   .pokemon-image {
     width: 150px;
     height: 150px;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 50%;
+    border: 4px solid $normal-light;
   }
 
   .pokemon-info {
     display: flex;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: $main-font;
+    font-size: 18px;
+    margin: 5px 0;
+    color: $normal-light; 
+    
+    p {
+      font-weight: bold;
+      font-family: $main-font;
+    }
   }
-
-  .info-label {
-    font-weight: bold;
-    font-family: var(--main-font);
-  }
-
+  
 }
