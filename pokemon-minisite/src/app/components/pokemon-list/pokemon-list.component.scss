@@ -1,0 +1,78 @@
+@use '../../style/variables' as *;
+
+@mixin card-grid {
+  display: grid;
+  grid-gap: 16px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
+  overflow-y: scroll & -webkit-scrollbar-thumb;
+  border-radius: 50px;
+}
+
+@mixin card {
+  display: inline;
+  justify-content: space-between;
+  padding-left: 20px;
+  background-color: lighten($normal, 20%);
+  border-radius: 20px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  &__info {
+    flex-direction: column;
+    color: $rock;
+    text-transform: capitalize;
+    text-align: center;
+
+    h2 {
+      border-radius: 40px;
+      font-family: $main-font;
+      -webkit-text-stroke-width: .50px;
+      -webkit-text-stroke-color: black;
+    }
+
+    span {
+      border-radius: 40px;
+      margin-top: 5px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      align-self: center;
+    }
+  }
+
+  &__img {
+    justify-content: center;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 10;
+  }
+}
+
+@mixin select-dropdown {
+  padding: 8px;
+  font-size: 16px;
+  border: var(--border-style);
+  border-radius: 4px;
+  background-color: var(--white-color);
+  color: var(--greyblack-color);
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.card-grid {
+  @include card-grid;
+}
+
+.card {
+  @include card;
+}
+
+.select-dropdown {
+  @include select-dropdown;
+}
