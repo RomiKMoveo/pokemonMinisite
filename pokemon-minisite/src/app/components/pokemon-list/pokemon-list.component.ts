@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 

@@ -24,5 +24,17 @@
 </div>
 
     
-
-
+    <div class="card-grid">
+        <div *ngFor="let pokemon of pokemons| filterPokemon:selectedType:searchInput">
+            <button class="card" [class.selected]="pokemon === selectedPokemon" type="button" (click)="openPopup(pokemon)">
+            <div class="card__info">
+                <h2>{{pokemon.name }}</h2>
+                <span>{{ pokemon.id }}</span>
+                <div class="card__img">
+                    <img [src]="pokemon.image" alt="{{ pokemon.name }}">
+                </div>
+            </div>
+            </button>
+        </div>   
+    </div>    
+</body>
