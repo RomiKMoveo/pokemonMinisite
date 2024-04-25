@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -11,7 +11,8 @@ import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
   standalone: true,
   imports: [
     NgFor,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './history.component.html',
   styleUrl: './history.component.scss'
@@ -37,9 +38,9 @@ export class HistoryComponent implements OnInit{
     }
     const searchHistoryLS = localStorage.getItem('searchHistory');
     this.searchHistory = searchHistoryLS ? JSON.parse(searchHistoryLS) : [];
-    console.log(searchHistoryLS);
-    console.log(this.searchHistory);
-   
+  }
+  goBack() {
+    this.router.navigate(['/pokemons']);
   }
 
 }

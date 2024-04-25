@@ -1,12 +1,17 @@
-<div>
-    <h2>Search History</h2>
-    <div *ngFor="let history of searchHistory; let i = index">
-        <label for="history">{{ history }}</label>
-    </div>
-</div>
-  
-   
-<!--   
-  <ng-template #noHistory>
-    <div class="no-history">No search history available.</div>
-  </ng-template> -->
+<body>
+  <ng-container *ngIf="searchHistory.length > 0; else noHistory">
+    <main class="box">
+      <h2>Search History</h2>
+      <div class="inputBox">
+        <div *ngFor="let history of searchHistory; let i = index">
+          <h3 for="history">{{ i + 1 }}. {{ history }}</h3>
+        </div>
+      </div>
+        <button type="button" name="" (click)="goBack()">home</button>
+    </main>
+  </ng-container>
+</body>
+
+<ng-template #noHistory>
+  <div class="no-history-msg">There is no search history at the moment.</div>
+</ng-template> 

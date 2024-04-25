@@ -5,14 +5,16 @@ import { HttpClient } from '@angular/common/http';
 
 import { PokemonInterface } from '../interfaces/pokemon.interface';
 import { PokemonApiResponse } from '../interfaces/pokemon-api-response.interface';
+import { environment } from '../../environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private readonly apiUrl = `https://pokeapi.co/api/v2/pokemon/`;
-  private readonly imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-
+  private readonly apiUrl = environment.apiUrl;
+  private readonly imageUrl = environment.imageUrl;
+  
   constructor(private http: HttpClient) {}
 
   getPokemonList(limit: number = 100): Observable<PokemonInterface[]> {

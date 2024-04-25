@@ -1,94 +1,89 @@
 @use '../../style/variables' as *;
-  
-.header {
-    color: #ffc81a;
-    background-color: $fire-light;
-    background-image: url("https://assets.website-files.com/62c1627eee0defc3a1256898/62cf234679dbabe18fa50a1e_pokeapi_256%201.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 100px;
-    margin: 0 auto;
-    text-shadow: -2px 0 #426291, 0 2px #426291, 2px 0 #426291;
-    box-shadow: 0px 3px 10px rgba(56, 56, 56, 0.3);
-    cursor: pointer;
-    }  
 body {
-    font-family: sans-serif;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5bbf58a6-1e85-4cfe-83fd-02df6f482b45/de8nlib-6bed7b3d-3d7e-4763-bb60-18f5ee0127fd.png/v1/fill/w_1024,h_652,q_80,strp/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvNWJiZjU4YTYtMWU4NS00Y2ZlLTgzZmQtMDJkZjZmNDgyYjQ1XC9kZThubGliLTZiZWQ3YjNkLTNkN2UtNDc2My1iYjYwLTE4ZjVlZTAxMjdmZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZVgNGi61AOkC068E-wphWmAUW8amj0MiJySqDcMCVh8");
-    background-size: cover; 
-    background-position: center;
-   
-  }
-  
+  font-family: $main-font;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5bbf58a6-1e85-4cfe-83fd-02df6f482b45/de8nlib-6bed7b3d-3d7e-4763-bb60-18f5ee0127fd.png/v1/fill/w_1024,h_652,q_80,strp/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvNWJiZjU4YTYtMWU4NS00Y2ZlLTgzZmQtMDJkZjZmNDgyYjQ1XC9kZThubGliLTZiZWQ3YjNkLTNkN2UtNDc2My1iYjYwLTE4ZjVlZTAxMjdmZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZVgNGi61AOkC068E-wphWmAUW8amj0MiJySqDcMCVh8");
+  background-size: cover; 
+  background-position: center;
+ 
   .box {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
-    margin: auto auto;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);
+      margin: auto auto;
+      padding: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%; 
+      max-width: 500px; 
+      height: auto;
+  }
+
+  h2 {
+      margin: 0 0 30px 0;
+      padding: 0;
+      color: $white;
+  }
+
+  .inputBox label {
+      color: $white;
+  }
+
+  .inputBox input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid $white;
+      color: $white;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin: 0 0 30px 0;
+      outline: none;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+
+      
   }
   
-  .box h2 {
-    margin: 0 0 30px 0;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+  h4 {
+    color: $fire; 
   }
-  
-  .box .inputBox label {
-    color: #fff;
+
+  input[type="submit"], .box button[type="submit"], a.button {
+      font-family: sans-serif;
+      background: $water-light;
+      font-size: 11px;
+      border: none;
+      border-radius: 5px;
+      color: $white;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 10px 20px;
+      letter-spacing: 2px;
+      outline: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 2px 10px 2px 0;
+      display: inline-block;
   }
-  
-  .box .inputBox input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    color: #fff;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    outline: none;
-    padding: 10px 0;
-    width: 100%;
-  }
-  
-  .box input[type="submit"], .box button[type="submit"], a.button {
-    font-family: sans-serif;
-    background: #03a9f4;
-    font-size: 11px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 10px 20px;
-    letter-spacing: 2px;
-    outline: none;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 2px 10px 2px 0;
-    display: inline-block;
-  }
-  
+
   .box input[type="submit"]:hover, .box button[type="submit"]:hover, a.button:hover {
-    opacity: 0.8;
+      opacity: 0.8;
   }
-  
+
   #tsparticles {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+      position: fixed;
+      margin: 0;
+      padding: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
   }
+}

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { environment } from '../../../environment';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,12 @@ import { LoginService } from '../../services/login.service';
   standalone: true,
   imports: [
     FormsModule,
+    NgIf
   ]
 })
 export class LoginComponent implements OnInit{
   email: string = '';
-  readonly verifyEmail: string = 'demo@skills.co.il'
+  readonly verifyEmail: string = environment.verifyEmail;
   errorMessage: string | undefined;
 
   
@@ -31,7 +34,7 @@ export class LoginComponent implements OnInit{
       this.loginService.setisVerifiedSubject(true);
       this.router.navigate(['/pokemons']);
     } else {
-      console.log( 'The email you have submitted is not verify');
+      this.errorMessage = 'The email you have submitted is not verified';
     }
   }
 

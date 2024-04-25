@@ -46,17 +46,14 @@ export class PokemonListComponent implements OnInit{
   ngOnInit()  {
     if (this.loginService.getisVerifiedSubject() === false) {
       this.router.navigate(['/login']);
-    } else {
+    }
       this.pokemonService.getPokemonList()
     .subscribe((pokemons: PokemonInterface[]) => {
       this.pokemons = pokemons;
 
       this.getAllTypes();  
-    });
-    }
-    
-    
-    }
+    });  
+  }
 
     openPopup(pokemon: PokemonInterface): void {
       const dialogRef = this.dialog.open(PokemonDetailComponent, {
@@ -83,8 +80,7 @@ export class PokemonListComponent implements OnInit{
         this.searchHistory.shift();
       }
       localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
-      console.log(this.searchHistory);
-      this.searchInput = "";
+      //add submit btn
     }
     
   }
