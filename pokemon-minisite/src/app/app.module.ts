@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule }   from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,10 +18,10 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
 
 @NgModule({
     declarations:[
-        AppComponent,
-        HeaderComponent, 
+        AppComponent, 
         PokemonListComponent,
-        FilterPokemonByTypeAndNamePipe
+        FilterPokemonByTypeAndNamePipe,
+        HeaderComponent
       
     ],
     imports:[

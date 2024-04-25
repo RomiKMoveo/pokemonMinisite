@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { PokemonService } from '../../services/pokemon.service';
 import { PokemonInterface } from '../../interfaces/pokemon.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { FilterPokemonByTypeAndNamePipe } from '../../pipes/filter-pokemon.pipe';
+import { LoginService } from '../../services/login.service';
 
 
-
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-pokemon-list',
@@ -29,20 +33,28 @@ export class PokemonListComponent implements OnInit{
   types: string[] = [];
   selectedType: string = 'all';
   searchInput: string = '';
+  searchHistory: string[] = [];
 
   constructor(
     private pokemonService: PokemonService,
     private dialog: MatDialog,
+    private router: Router,
+    private loginService: LoginService,
     ) {}
   
   
   ngOnInit()  {
-    this.pokemonService.getPokemonList()
+    if (this.loginService.getisVerifiedSubject() === false) {
+      this.router.navigate(['/login']);
+    } else {
+      this.pokemonService.getPokemonList()
     .subscribe((pokemons: PokemonInterface[]) => {
       this.pokemons = pokemons;
 
       this.getAllTypes();  
     });
+    }
+    
     
     }
 
@@ -66,7 +78,13 @@ export class PokemonListComponent implements OnInit{
     
     onSearchPokemon(searchTerm: string) {
       this.searchInput = searchTerm;
-
+      this.searchHistory.push(searchTerm);
+      if (this.searchHistory.length > 5) {
+        this.searchHistory.shift();
+      }
+      localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
+      console.log(this.searchHistory);
+      this.searchInput = "";
     }
     
   }

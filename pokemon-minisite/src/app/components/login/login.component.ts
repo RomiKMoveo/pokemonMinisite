@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit{
 
   
   constructor(
-    private router: Router
+    private router: Router,
+    private loginService: LoginService,
   ){}
 
   ngOnInit(): void {
@@ -26,9 +28,10 @@ export class LoginComponent implements OnInit{
 
   emailVerification(): void {
     if (this.email === this.verifyEmail) {
+      this.loginService.setisVerifiedSubject(true);
       this.router.navigate(['/pokemons']);
     } else {
-      console.log( 'Unauthorized email address');
+      console.log( 'The email you have submitted is not verify');
     }
   }
 
