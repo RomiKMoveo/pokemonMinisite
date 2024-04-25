@@ -1,5 +1,9 @@
 <div class="header">
-    <header></header>
+    <div *ngIf="isLoggedIn">
+        <button  type="button" (click)="logout()">Logout</button>
+        <button type="menu" name=""  (click)="showHistory()">History</button>  
+    </div>
+    
 </div>
 
 
