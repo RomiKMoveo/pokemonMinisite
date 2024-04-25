@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.loginService.setisVerifiedSubject(false);
     this.loginService.getisVerifiedSubjectObservable().subscribe(() => {
       this.isVerifiedSubject = this.loginService.getisVerifiedSubjectObservable();
   });
@@ -36,7 +35,6 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.loginService.setisVerifiedSubject(false);
-    console.log( 'after logout: ' + this.isVerifiedSubject );
 
     this.router.navigate(['/login']);
   }

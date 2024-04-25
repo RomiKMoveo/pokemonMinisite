@@ -10,9 +10,12 @@
   height: 100px;
   margin: 0 auto;
   text-shadow: -2px 0 $water, 0 2px $water, 2px 0 $water;
-  box-shadow: 0px 3px 10px rgba(56, 56, 56, 0.3);
   cursor: pointer;
-        
-    
-  
-  }
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+}
+
+.btn[type="button"], .box button[type="button"], a.button {
+  @include btn-type-button;
+}

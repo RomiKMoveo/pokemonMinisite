@@ -1,10 +1,8 @@
 <div class="header">
-    <div *ngIf="isVerifiedSubject | async">
-      <button type="button" (click)="logout()">Logout</button>
-      <button type="button" (click)="showHistory()">History</button>  
-    </div>
-    
+  <div *ngIf="isVerifiedSubject | async">
+    <button type="button" class="btn" (click)="logout()">Logout</button>
+    <button type="button" class="btn" (click)="showHistory()">History</button>  
+  </div>
 </div>
-
 
 
