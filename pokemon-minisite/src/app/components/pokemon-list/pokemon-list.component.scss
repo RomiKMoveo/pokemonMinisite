@@ -22,8 +22,8 @@
   overflow: hidden;
   
   &:hover {
-    background-color: white;
-    color: #ef5450;
+    background-color: $ground-light;
+    color: $fire-light;
     transform: translateY(-3px);
   }
 
@@ -37,7 +37,7 @@
       border-radius: 40px;
       font-family: $main-font;
       -webkit-text-stroke-width: .50px;
-      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-color: $black;
     }
 
     span {
@@ -90,7 +90,7 @@
     margin-right: 10px; 
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.54);
+    border-color: $water-light(0, 0, 0, 0.54);
     border-radius: 10px;
     font-size: 1.5em;
     
@@ -102,7 +102,7 @@
     margin-bottom: 0px;
     border-radius: 10px;
     background-color: $water;
-    color: #fff;
+    color: $white;
     font-size: 1em;
     &:focus {
       outline: none;
