@@ -1,12 +1,10 @@
 <div class="search">
+   <input class="search__input" [(ngModel)]="searchInput" (keydown.enter)="onSearchPokemon(searchInput)" placeholder="Search for Pokémon" >       
     <div>
-        <div ><input class="search__input" [(ngModel)]="searchInput" (keydown.enter)="onSearchPokemon(searchInput)" placeholder="Search for Pokémon" ></div>
-    </div>
-    <div>
-        <select class="sort__select" [(ngModel)]="selectedType">
-            <option value="all">All Types</option>
-            <option *ngFor="let type of types" [value]="type">{{ type }}</option>
-        </select>
+    <select class="sort__select" [(ngModel)]="selectedType">
+        <option value="all">All Types</option>
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+    </select>
     </div>
 </div>
 
@@ -17,9 +15,9 @@
         <div class="card__info">
             <h2>{{pokemon.name }}</h2>
             <span>{{ pokemon.id }}</span>
-            <div class="card__img">
+            <p class="img">
                 <img [src]="pokemon.image" alt="{{ pokemon.name }}">
-            </div>
+            </p>
         </div>
         </button>
     </div>   
