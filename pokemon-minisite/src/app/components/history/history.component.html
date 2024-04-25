@@ -1,1 +1,12 @@
-<p>history works!</p>
+<div>
+    <h2>Search History</h2>
+    <div *ngFor="let history of searchHistory; let i = index">
+        <label for="history">{{ history }}</label>
+    </div>
+</div>
+  
+   
+<!--   
+  <ng-template #noHistory>
+    <div class="no-history">No search history available.</div>
+  </ng-template> -->
