@@ -1,4 +1,5 @@
 @use '../../style/variables' as *;
+@use '../../style/mixin' as *;
 
 .header {
   color: $ground;
@@ -14,6 +15,7 @@
   display: flex;
   justify-content: flex-end; 
   align-items: center; 
+  font-family: $main-font;
 }
 
 .btn[type="button"], .box button[type="button"], a.button {

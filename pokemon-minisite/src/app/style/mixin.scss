@@ -1,0 +1,90 @@
+@use './variables' as *;
+
+/* MIXIN */
+@mixin btn-type-button {
+    font-family: $main-font;
+    background: $fire-light;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 2px 10px 2px 0;
+    display: inline-block;
+    font-size: 14px;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+@mixin component-body {
+    font-family: $main-font;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("../../assets/images/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg");
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  
+    .box {
+      background-color: rgba($black, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 20px 30px rgba($black, 0.8);
+      padding: 40px;
+      text-align: center;
+      width: 80%; 
+      max-width: 700px; 
+      height: 80%; 
+      max-height: 500px;
+    }
+    
+    h2 {
+      margin: 0 0 30px 0;
+      padding: 0;
+      color: $white;
+    }
+    
+    .inputBox h3 {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid $white;
+      color: $white;
+      letter-spacing: 2px;
+      margin: 0 0 30px 0;
+      outline: none;
+      width: 100%;
+      text-align: center;
+    }
+    
+    input[type="button"], .box button[type="button"] {
+      font-family: $main-font;
+      background: $water-light;
+      border: none;
+      border-radius: 5px;
+      color: $white;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 10px 20px;
+      letter-spacing: 2px;
+      outline: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 2px 10px 2px 0;
+      display: inline-block;
+      font-size: 14px;
+      &:hover {
+        opacity: 0.5; 
+      }
+    }
+  }
+  

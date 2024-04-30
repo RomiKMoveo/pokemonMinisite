@@ -1,73 +1,12 @@
 @use '../../style/variables' as *;
+@use '../../style/mixin' as *;
 
-body {
-    font-family: $main-font;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5bbf58a6-1e85-4cfe-83fd-02df6f482b45/de8nlib-6bed7b3d-3d7e-4763-bb60-18f5ee0127fd.png/v1/fill/w_1024,h_652,q_80,strp/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvNWJiZjU4YTYtMWU4NS00Y2ZlLTgzZmQtMDJkZjZmNDgyYjQ1XC9kZThubGliLTZiZWQ3YjNkLTNkN2UtNDc2My1iYjYwLTE4ZjVlZTAxMjdmZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZVgNGi61AOkC068E-wphWmAUW8amj0MiJySqDcMCVh8");
-    background-size: cover; 
-    background-position: center;
-   
-  
-  
-  .box {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);
-    margin: auto auto;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 80%; 
-    max-width: 700px; 
-    height: 80%; 
-    max-height: 500px;
-    
 
-  }
-  
-  h2 {
-    margin: 0 0 30px 0;
-    padding: 0;
-    color: $white;
-  }
-  
-  .inputBox h3 {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $white;
-    color: $white;
-    letter-spacing: 2px;
-    margin: 0 0 30px 0;
-    outline: none;
-    width: 100%;
-    text-align: center;
-  }
-  
-  input[type="button"], .box button[type="button"], a.button {
-    font-family: sans-serif;
-    background: $water-light;
-    border: none;
-    border-radius: 5px;
-    color: $white;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 10px 20px;
-    letter-spacing: 2px;
-    outline: none;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 2px 10px 2px 0;
-    display: inline-block;
-    font-size: 14px; 
-  }
-  
-  .box input[type="button"]:hover, .box button[type="button"]:hover, a.button:hover {
-    opacity: 0.8;
-  }
+
+.history-body {
+  @include component-body
+}
+
+.no-history-msg {
+  color: $white; 
 }

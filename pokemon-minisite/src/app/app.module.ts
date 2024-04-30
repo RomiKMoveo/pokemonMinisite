@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule }   from '@angular/forms';
-import {RouterModule} from '@angular/router';
-
+import {RouterModule, RouterOutlet} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
@@ -22,14 +21,14 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
         PokemonListComponent,
         FilterPokemonByTypeAndNamePipe,
         HeaderComponent
-      
     ],
     imports:[
         BrowserModule, 
         CommonModule,
         MatDialogModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        RouterOutlet
     ],
     providers:[
         HttpClientModule,  

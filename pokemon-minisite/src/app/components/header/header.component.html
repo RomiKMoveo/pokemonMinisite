@@ -1,8 +1,7 @@
 <div class="header">
-  <div *ngIf="isVerifiedSubject | async">
-    <button type="button" class="btn" (click)="logout()">Logout</button>
+  <div *ngIf="isLoggedIn">
     <button type="button" class="btn" (click)="showHistory()">History</button>  
+    <button type="button" class="btn" (click)="logout()">Logout</button>
   </div>
-</div>
-
+</div>  
 

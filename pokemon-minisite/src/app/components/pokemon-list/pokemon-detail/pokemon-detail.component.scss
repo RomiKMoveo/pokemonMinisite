@@ -1,5 +1,6 @@
 
 @use '../../../style/variables' as *;
+@use '../../../style/mixin' as *;
 @import '../pokemon-list.component.scss';
 
 .pokemon-popup {
@@ -9,7 +10,7 @@
 
 
   .pokemon-title {
-    font-family: $main-font;
+    font-family: #{$main-font}, sans-serif;
     border-radius: 15px;
     font-weight: bold;
     text-align: center;

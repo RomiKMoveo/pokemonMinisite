@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginService } from '../../services/login.service';
 import { CommonModule } from '@angular/common';
 
@@ -16,32 +15,28 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class HeaderComponent implements OnInit {
-  isVerifiedSubject: Observable<boolean>;
-  
+  isLoggedIn: boolean = false;
+
   constructor(
     private router: Router,
-    private loginService: LoginService
-  ) 
-  {
-    this.isVerifiedSubject = this.loginService.getisVerifiedSubjectObservable();
-  }
+    private loginService: LoginService) {}
   
   ngOnInit(): void {
-    this.loginService.getisVerifiedSubjectObservable().subscribe(() => {
-      this.isVerifiedSubject = this.loginService.getisVerifiedSubjectObservable();
-  });
+    this.loginService.getisLoggedInSubjectObservable().subscribe(isLoggedIn => {
+      console.log(isLoggedIn);
+      this.isLoggedIn = isLoggedIn;
+    });
+  
   }
     
 
   logout() {
-    this.loginService.setisVerifiedSubject(false);
-
+    this.loginService.setisLoggedInSubject(false);
     this.router.navigate(['/login']);
   }
 
   showHistory() {
     this.router.navigate(['/history']);
-
   }
   
 }

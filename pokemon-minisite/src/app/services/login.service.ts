@@ -5,23 +5,20 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private isVerifiedSubject: BehaviorSubject<boolean>;
+  private readonly isLoggedInLS = localStorage.getItem('isLoggedIn') === 'true';
+  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.isLoggedInLS);
 
-  constructor() {
-    const isVerifiedLS = localStorage.getItem('isVerified') === 'true';
-    this.isVerifiedSubject = new BehaviorSubject<boolean>(isVerifiedLS);
+
+  setisLoggedInSubject(status: boolean): void {
+    this.isLoggedInSubject.next(status);
+    localStorage.setItem('isLoggedIn', status.toString());
   }
 
-  setisVerifiedSubject(status: boolean): void {
-    this.isVerifiedSubject.next(status);
-    localStorage.setItem('isVerified', status.toString());
+  getisLoggedInSubjectObservable(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
   }
 
-  getisVerifiedSubjectObservable(): Observable<boolean> {
-    return this.isVerifiedSubject.asObservable();
-  }
-
-  getisVerifiedSubject(): boolean {
-    return this.isVerifiedSubject.value;
+  getisLoggedInSubject(): boolean {
+    return this.isLoggedInSubject.value;
   }
 }

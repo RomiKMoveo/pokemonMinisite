@@ -1,6 +1,7 @@
 
 @use '../../style/variables' as *;
 
+
 @mixin card-grid {
   display: grid;
   grid-gap: 16px;

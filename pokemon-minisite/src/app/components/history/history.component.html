@@ -1,4 +1,4 @@
-<body>
+<div class="history-body">
   <ng-container *ngIf="searchHistory.length > 0; else noHistory">
     <main class="box">
       <h2>Search History</h2>
@@ -7,10 +7,10 @@
           <h3 for="history">{{ i + 1 }}. {{ history }}</h3>
         </div>
       </div>
-        <button type="button" name="" (click)="goBack()">home</button>
+        <button type="button" (click)="goBack()">home</button>
     </main>
   </ng-container>
-</body>
+</div>
 
 <ng-template #noHistory>
   <div class="no-history-msg">There is no search history at the moment.</div>

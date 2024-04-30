@@ -33,7 +33,7 @@ export class HistoryComponent implements OnInit{
   
   ngOnInit(): void {
     
-    if (this.loginService.getisVerifiedSubject() === false) {
+    if (this.loginService.getisLoggedInSubject() === false) {
       this.router.navigate(['/login']);
     }
     const searchHistoryLS = localStorage.getItem('searchHistory');

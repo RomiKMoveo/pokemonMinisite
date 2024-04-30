@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
@@ -15,23 +15,20 @@ import { NgIf } from '@angular/common';
     NgIf
   ]
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
   email: string = '';
-  readonly verifyEmail: string = environment.verifyEmail;
+  readonly verifyEmail: string = environment.params.verifyEmail;
   errorMessage: string | undefined;
 
   
   constructor(
     private router: Router,
-    private loginService: LoginService,
-  ){}
+    private loginService: LoginService,){}
 
-  ngOnInit(): void {
-  }
 
   emailVerification(): void {
     if (this.email === this.verifyEmail) {
-      this.loginService.setisVerifiedSubject(true);
+      this.loginService.setisLoggedInSubject(true);
       this.router.navigate(['/pokemons']);
     } else {
       this.errorMessage = 'The email you have submitted is not verified';

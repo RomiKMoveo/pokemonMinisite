@@ -44,7 +44,7 @@ export class PokemonListComponent implements OnInit{
   
   
   ngOnInit()  {
-    if (this.loginService.getisVerifiedSubject() === false) {
+    if (this.loginService.getisLoggedInSubject() === false) {
       this.router.navigate(['/login']);
     }
       this.pokemonService.getPokemonList()
@@ -60,6 +60,14 @@ export class PokemonListComponent implements OnInit{
         data: pokemon
 
       });
+      if(pokemon.name !== this.searchHistory[this.searchHistory.length-1]) {
+        this.searchHistory.push(pokemon.name);
+        if (this.searchHistory.length > 5) {
+          this.searchHistory.shift();
+        }
+        localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
+      }
+      
     }
 
     getAllTypes(): void {
@@ -75,12 +83,6 @@ export class PokemonListComponent implements OnInit{
     
     onSearchPokemon(searchTerm: string) {
       this.searchInput = searchTerm;
-      this.searchHistory.push(searchTerm);
-      if (this.searchHistory.length > 5) {
-        this.searchHistory.shift();
-      }
-      localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
-      //add submit btn
     }
     
   }
