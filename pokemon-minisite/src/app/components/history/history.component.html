@@ -1,13 +1,13 @@
 <div class="history-body">
   <ng-container *ngIf="searchHistory.length > 0; else noHistory">
     <main class="box">
-      <h2>Search History</h2>
+      <div class="title">History</div>
       <div class="inputBox">
         <div *ngFor="let history of searchHistory; let i = index">
           <h3 for="history">{{ i + 1 }}. {{ history }}</h3>
         </div>
       </div>
-        <button type="button" (click)="goBack()">home</button>
+        <button type="button" (click)="goBack()">Go Back</button>
     </main>
   </ng-container>
 </div>
