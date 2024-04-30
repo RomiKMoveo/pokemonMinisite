@@ -1,0 +1,16 @@
+<div class="loginBody">
+  <main class="box">
+    <div class="login-title">Login</div>
+      <div>
+        <div class="inputBox">
+          <h4 *ngIf="errorMessage" class="error-message">{{ errorMessage }}</h4> 
+          <label for="userName">Username</label>
+          <input type="email"  [(ngModel)]="email"  placeholder="Type your username" required/>   
+        </div>
+        <div>
+          <button type="submit"  (click)="emailVerification()">Submit</button>
+           
+        </div>
+      </div>
+    </main>
+</div>

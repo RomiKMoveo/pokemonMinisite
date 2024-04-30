@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule }   from '@angular/forms';
+import {RouterModule, RouterOutlet} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
@@ -12,21 +13,20 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
 
 
 
-
-
 @NgModule({
     declarations:[
-        AppComponent,
-        HeaderComponent, 
+        AppComponent, 
         PokemonListComponent,
-        FilterPokemonByTypeAndNamePipe
-      
+        FilterPokemonByTypeAndNamePipe,
+        HeaderComponent
     ],
     imports:[
         BrowserModule, 
         CommonModule,
         MatDialogModule,
-        FormsModule
+        FormsModule,
+        RouterModule,
+        RouterOutlet
     ],
     providers:[
         HttpClientModule,  

@@ -1,18 +1,34 @@
 @use '../../style/variables' as *;
+@use '../../style/mixin' as *;
 
 .header {
   color: $ground;
   background-color: $fire-light;
-  background-image: url("https://assets.website-files.com/62c1627eee0defc3a1256898/62cf234679dbabe18fa50a1e_pokeapi_256%201.svg");
+  background-image: url("../../../assets/images/62cf234679dbabe18fa50a1e_pokeapi_256\ 1.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   height: 100px;
   margin: 0 auto;
   text-shadow: -2px 0 $water, 0 2px $water, 2px 0 $water;
-  box-shadow: 0px 3px 10px rgba(56, 56, 56, 0.3);
   cursor: pointer;
-        
-    
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  font-family: $main-font;
+
+  .btn {
+    @include btn-type-button;
   }
+
+  .btnIcon {
+    @include btn-type-button;
+    background-color: $fire-light;
+    border: none; 
+    color: white;
+    padding: 12px 16px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+}
+

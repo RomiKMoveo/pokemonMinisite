@@ -1,4 +1,4 @@
-<div class="search">
+ <div class="search">
    <input class="search__input" [(ngModel)]="searchInput" (keydown.enter)="onSearchPokemon(searchInput)" placeholder="Search for Pokémon" >       
     <div>
     <select class="sort__select" [(ngModel)]="selectedType">
@@ -13,16 +13,10 @@
     <div *ngFor="let pokemon of pokemons| filterPokemon:selectedType:searchInput">
         <button class="card" [class.selected]="pokemon === selectedPokemon" type="button" (click)="openPopup(pokemon)">
         <div class="card__info">
-            <h2>{{pokemon.name }}</h2>
-            <span>{{ pokemon.id }}</span>
-            <p class="img">
-                <img [src]="pokemon.image" alt="{{ pokemon.name }}">
-            </p>
+            <div><span>#{{pokemon.id}}</span></div>
+            <div class="pokeName">{{pokemon.name }}</div>
+            <div class="imag"><img [src]="pokemon.image" alt ="{{ pokemon.name }}"></div>
         </div>
         </button>
     </div>   
 </div>
-
-    
-
-
