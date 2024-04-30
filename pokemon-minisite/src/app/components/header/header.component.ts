@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
+  localStoreg: any;
 
   constructor(
     private router: Router,
@@ -23,7 +24,6 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void {
     this.loginService.getisLoggedInSubjectObservable().subscribe(isLoggedIn => {
-      console.log(isLoggedIn);
       this.isLoggedIn = isLoggedIn;
     });
   
@@ -32,11 +32,15 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.loginService.setisLoggedInSubject(false);
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 
   showHistory() {
     this.router.navigate(['/history']);
   }
-  
+
+  goToPokemons() {
+    this.router.navigate(['/pokemons']);
+  }
 }

@@ -47,12 +47,14 @@ export class PokemonListComponent implements OnInit{
     if (this.loginService.getisLoggedInSubject() === false) {
       this.router.navigate(['/login']);
     }
+    else {
       this.pokemonService.getPokemonList()
     .subscribe((pokemons: PokemonInterface[]) => {
       this.pokemons = pokemons;
 
       this.getAllTypes();  
     });  
+    }
   }
 
     openPopup(pokemon: PokemonInterface): void {

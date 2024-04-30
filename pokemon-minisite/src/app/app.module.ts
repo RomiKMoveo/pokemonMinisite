@@ -13,8 +13,6 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
 
 
 
-
-
 @NgModule({
     declarations:[
         AppComponent, 

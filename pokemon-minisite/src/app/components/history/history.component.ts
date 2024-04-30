@@ -19,25 +19,24 @@ import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 })
 export class HistoryComponent implements OnInit{
   searchHistory: string[] = [];
+  isLoggedIn: boolean = false;
 
   constructor(
-    private pokemonListComponent: PokemonListComponent,
-    private dialog: MatDialog,
     private router: Router,
-    private loginService: LoginService,
-    ) {
-  
-     
-    
-    }
+    private loginService: LoginService) {}
   
   ngOnInit(): void {
-    
-    if (this.loginService.getisLoggedInSubject() === false) {
+    this.loginService.getisLoggedInSubjectObservable().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
+    if (this.isLoggedIn === false) {
       this.router.navigate(['/login']);
     }
-    const searchHistoryLS = localStorage.getItem('searchHistory');
-    this.searchHistory = searchHistoryLS ? JSON.parse(searchHistoryLS) : [];
+    else {
+      const searchHistoryLS = localStorage.getItem('searchHistory');
+      this.searchHistory = searchHistoryLS ? JSON.parse(searchHistoryLS) : [];
+    }
+    
   }
   goBack() {
     this.router.navigate(['/pokemons']);

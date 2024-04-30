@@ -3,29 +3,35 @@
 @use '../../../style/mixin' as *;
 @import '../pokemon-list.component.scss';
 
+
 .pokemon-popup {
   background-color: $fire-light;
-  box-shadow: 0 4px 8px rgba(0, 0, 0.1, 0.1); 
-  
+  box-shadow: 0 4px 8px rgba($black, 0.1); 
+  position: relative;
+  max-width: 100%;
+  max-width: 100%; 
+  padding: 40px; 
+  box-shadow: 0 20px 30px rgba($black, 0.15);
+  border: none;
 
+  .pokemon-image {
+    width: 180px;
+    max-height: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 4px solid $normal-light;
+    position: relative;
+  }
 
   .pokemon-title {
-    font-family: #{$main-font}, sans-serif;
+    font-family: $main-font;
     border-radius: 15px;
     font-weight: bold;
     text-align: center;
-    font-size: 22px;
+    font-size: 24px;
     padding: 15px;
     color: $normal-light;
-  }
-
-  .pokemon-image {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: 0 auto; 
-    border-radius: 50%;
-    border: 4px solid $normal-light;
   }
 
   .pokemon-info {
@@ -34,13 +40,17 @@
     align-items: center;
     margin-top: 20px;
     font-family: $main-font;
-    font-size: 18px;
     margin: 5px 0;
     color: $normal-light; 
-    
-    p {
-      font-weight: bold;
-      font-family: $main-font;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+    font-weight: bold;
+
+    .types, .abolities, .id, .height, .weight{
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0 40px 0;
     }
   }
   
