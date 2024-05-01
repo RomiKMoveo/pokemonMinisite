@@ -5,11 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule }   from '@angular/forms';
 import {RouterModule, RouterOutlet} from '@angular/router';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
+import { MyMapComponent } from './components/my-map/my-map.component';
+
 
 
 
@@ -18,7 +21,8 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
         AppComponent, 
         PokemonListComponent,
         FilterPokemonByTypeAndNamePipe,
-        HeaderComponent
+        HeaderComponent,
+        MyMapComponent
     ],
     imports:[
         BrowserModule, 
@@ -26,7 +30,8 @@ import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
         MatDialogModule,
         FormsModule,
         RouterModule,
-        RouterOutlet
+        RouterOutlet,
+        GoogleMapsModule
     ],
     providers:[
         HttpClientModule,  

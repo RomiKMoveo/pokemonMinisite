@@ -43,4 +43,8 @@ export class HeaderComponent implements OnInit {
   goToPokemons() {
     this.router.navigate(['/pokemons']);
   }
+
+  goToMyMap() {
+    this.router.navigate(['/myMap']);
+  }
 }

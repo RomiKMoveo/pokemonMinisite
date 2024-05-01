@@ -1,1 +1,11 @@
-<p>my-map works!</p>
+<span class="map-search">
+    <input placeholder="Search for location" #searchInput>
+    <div class="buttons-container">
+        <button (click)="calcRoute()">Directions to office 🚗</button>
+        <button (click)="resetMap(searchInput)">Reset map</button>
+        <button (click)="changeMapStyle()">Change Map's Style</button>
+    </div>
+</span>
+<div>
+    <div #mapContainer id="map"></div>
+</div>
