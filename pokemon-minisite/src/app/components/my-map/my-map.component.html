@@ -1,9 +1,9 @@
 <span class="map-search">
-    <input placeholder="Search for location" #searchInput>
+    <input #searchInput type="text" placeholder="Enter address">   
     <div class="buttons-container">
-        <button (click)="calcRoute()">Directions to office 🚗</button>
-        <button (click)="resetMap(searchInput)">Reset map</button>
-        <button (click)="changeMapStyle()">Change Map's Style</button>
+        <button (click)="resetMap()">↩️ Reset map</button>
+        <button (click)="getDirections()">🚘 Directions to office </button>
+        <mat-slide-toggle class="toggle-switch" [(ngModel)]="isStyleChanged" (change)="changeMapsStyle()">Change Style</mat-slide-toggle>
     </div>
 </span>
 <div>

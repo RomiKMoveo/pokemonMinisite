@@ -5,6 +5,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { MyMapComponent } from './components/my-map/my-map.component';
 
 
+
 export const routes: Routes = [
     { path: '', redirectTo:'login', pathMatch:'full'},
     { path: 'pokemons', component: PokemonListComponent },

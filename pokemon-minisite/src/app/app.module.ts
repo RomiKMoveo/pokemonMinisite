@@ -12,6 +12,8 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { HeaderComponent } from './components/header/header.component';
 import { FilterPokemonByTypeAndNamePipe } from './pipes/filter-pokemon.pipe';
 import { MyMapComponent } from './components/my-map/my-map.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 
@@ -31,7 +33,8 @@ import { MyMapComponent } from './components/my-map/my-map.component';
         FormsModule,
         RouterModule,
         RouterOutlet,
-        GoogleMapsModule
+        GoogleMapsModule,
+        MatFormFieldModule
     ],
     providers:[
         HttpClientModule,  
