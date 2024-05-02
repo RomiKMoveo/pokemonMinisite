@@ -22,7 +22,6 @@ span{
         display: flex;
         flex-direction: row;
     
-        
         button {
             background-color: $white;
             font-family: $main-font;
@@ -36,13 +35,13 @@ span{
             line-height: 20px; 
             cursor: pointer;
             &:hover{
-                background-color: rgb(216, 228, 216);
+                background-color: rgb($normal, 0.6);
             }   
         }
     }
 }
 
-div {
+div, .map-display{
     @include centered-style;
     flex-direction:column;
     #map{
