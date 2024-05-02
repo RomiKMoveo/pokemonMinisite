@@ -110,7 +110,7 @@ export class MyMapComponent implements AfterViewInit{
     this.directionsRenderer.setMap(null);
   }
   changeMapsStyle(): void {
-    this.isStyleChanged = !this.isStyleChanged;
+    this.isStyleChanged = this.isStyleChanged;
     this.map.setOptions({ styles: this.isStyleChanged ? myMapStyle : [] });
 }
 
