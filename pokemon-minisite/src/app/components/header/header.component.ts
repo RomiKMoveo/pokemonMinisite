@@ -45,6 +45,6 @@ export class HeaderComponent implements OnInit {
   }
 
   goToMyMap() {
-    this.router.navigate(['/myMap']);
+    this.router.navigate(['/Map']);
   }
 }

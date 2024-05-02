@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: 'pokemons', component: PokemonListComponent },
     { path: 'history', component: HistoryComponent },
     { path: 'login', component: LoginComponent},
-    { path: 'myMap', component: MyMapComponent},
+    { path: 'Map', component: MyMapComponent},
     { path: '**', redirectTo:'login', pathMatch:'full' }
   ];
   
