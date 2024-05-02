@@ -34,7 +34,7 @@
       color: $white;
   }
   
-  .inputBox h3 {
+  .inputBox {
     background: transparent;
     border: none;
     border-bottom: 1px solid $white;
@@ -69,6 +69,11 @@
 }
 
 .no-history-msg {
-  color: $white; 
+  color: $black;
+  font-family: $main-font;
+  font-weight: bold; 
+  font-size: 22px;
+  text-align: center;
+  margin: 0 0 30px 0;
 }
 

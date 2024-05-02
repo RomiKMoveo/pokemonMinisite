@@ -5,6 +5,7 @@
     <button class="btnIcon" (click)="goToPokemons()"><i class="fa fa-home"></i></button>
   </div>
   <div *ngIf="isLoggedIn">
+    <button class="btn" (click)="goToMyMap()">Map</button>  
     <button class="btn" (click)="showHistory()">History</button>  
     <button class="btn" (click)="logout()">Logout</button>
   </div>

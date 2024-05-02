@@ -1,0 +1,11 @@
+<span class="map-search">
+    <input #searchInput type="text" placeholder="Enter address">   
+    <div class="buttons-container">
+        <button (click)="resetMap()">↩️Reset map</button>
+        <button (click)="getDirections()">🚘 Directions to office </button>
+        <mat-slide-toggle class="toggle-switch" [(ngModel)]="isStyleChanged" (change)="changeMapsStyle()">Change Style</mat-slide-toggle>
+    </div>
+</span>
+<div>
+    <div class="map-display" #mapContainer id="map"></div>
+</div>
