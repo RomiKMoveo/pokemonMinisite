@@ -5,40 +5,41 @@ span{
     display: flex;
     justify-content: space-between;
     margin: 20px;
-}
-
-.buttons-container{
-    display: flex;
-    flex-direction: row;
-}
-
-.map-search{
-    margin: 20px;
-    input{
-        width: 400px;
-        padding: 8px;
-        font-size: 16px;
-        border-radius: 4px;
-        margin-right: 10px;
-    }
-}
-
-button {
-    background-color: $white;
-    font-family: $main-font;
-    width: 180px;
-    height: 40px;
-    padding: 10px;
-    font-size: 15px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    line-height: 20px; 
-    cursor: pointer;
-    &:hover{
-        background-color: rgb(216, 228, 216);
-    }
     
+    .map-search{
+        margin: 20px;
+        input{
+            width: 400px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+    }
+
+
+    .buttons-container{
+        display: flex;
+        flex-direction: row;
+    
+        
+        button {
+            background-color: $white;
+            font-family: $main-font;
+            width: 180px;
+            height: 40px;
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            line-height: 20px; 
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(216, 228, 216);
+            }   
+        }
+    }
 }
 
 div {
